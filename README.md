@@ -40,28 +40,6 @@ It focuses on:
 
 ---
 
-## Project Structure
-
-
-app/
-├── core/ # Configuration, database setup, response handling
-├── routes/ # API endpoints
-├── services/ # Business logic layer
-├── templates/ # HTML UI files
-├── static/ # CSS, JavaScript assets
-└── main.py # Application entry point
-
-scripts/
-└── reset_database.py # Database reset utility
-
-tests/
-└── test_smoke.py # Basic smoke tests
-
-
----
-
-## Getting Started
-
 ### Run the Application
 
 ```bash
