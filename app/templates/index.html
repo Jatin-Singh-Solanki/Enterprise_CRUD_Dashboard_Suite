@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{APP_NAME}}</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <video class="background-video" autoplay muted loop playsinline>
+    <source src="/static/video/command-bg.mp4" type="video/mp4" />
+  </video>
+  <div class="glass-overlay"></div>
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">AN</div><div><h2>AtlasNexus</h2><p>ProSuite</p></div></div>
+    <nav>
+      <button class="nav active" data-page="dashboard">Dashboard</button>
+      <button class="nav" data-page="projects">Projects</button>
+      <button class="nav" data-page="customers">Customers</button>
+      <button class="nav" data-page="tasks">Delivery Board</button>
+      <button class="nav" data-page="risks">Risk Register</button>
+      <button class="nav" data-page="finance">Finance</button>
+      <button class="nav" data-page="milestones">Milestones</button>
+      <button class="nav" data-page="analytics">Analytics</button>
+      <button class="nav" data-page="audit">Audit Logs</button>
+    </nav>
+    <div class="health"><span>System Health</span><strong>99.2%</strong><small>APIs, DB, UI online</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div><p class="eyebrow">Executive Workspace</p><h1 id="pageTitle">Operational Intelligence Dashboard</h1></div>
+      <div class="actions"><input id="globalSearch" placeholder="Search projects, customers, risks..."/><button id="refreshBtn">Refresh</button></div>
+    </header>
+
+    <section id="dashboard" class="page active-page">
+      <div class="hero"><div><small>Portfolio Overview</small><h2>Lead delivery, revenue, risk, and customer health from one workspace.</h2><p>Built as a senior-level solo project with clean APIs, editable records, data visualization, audit logs, and a premium dashboard experience.</p></div><div class="hero-card"><span>Forecast Confidence</span><strong id="forecastConfidence">--%</strong><p>Calculated from delivery velocity, customer health, budget burn, and risk exposure.</p></div></div>
+      <div class="metric-grid" id="metricGrid"></div>
+      <div class="section-stack">
+        <section class="panel"><div class="panel-head"><div><small>Portfolio Command</small><h3>Priority Projects</h3></div><button class="primary" data-open="projectModal">Add Project</button></div><div class="table-wrap"><table id="projectTable"></table></div></section>
+        <section class="panel"><div class="panel-head"><div><small>Customer Success</small><h3>Customer Health</h3></div><button data-open="customerModal">Add Customer</button></div><div id="customerCards" class="card-grid"></div></section>
+        <section class="panel"><div class="panel-head"><div><small>Risk Control</small><h3>Open Risk Radar</h3></div><button data-open="riskModal">Add Risk</button></div><div id="riskCards" class="card-grid"></div></section>
+        <section class="panel"><div class="panel-head"><div><small>Execution</small><h3>Delivery Board</h3></div><button data-open="taskModal">Add Task</button></div><div id="taskBoard" class="kanban"></div></section>
+      </div>
+    </section>
+
+    <section id="projects" class="page"><div class="panel"><div class="panel-head"><h3>Project Management</h3><button class="primary" data-open="projectModal">Add Project</button></div><table id="projectsFullTable"></table></div></section>
+    <section id="customers" class="page"><div class="panel"><div class="panel-head"><h3>Customer Relationship Center</h3><button class="primary" data-open="customerModal">Add Customer</button></div><div id="customersFull" class="customer-grid"></div></div></section>
+    <section id="tasks" class="page"><div class="panel"><div class="panel-head"><h3>Delivery Execution Board</h3><button class="primary" data-open="taskModal">Add Task</button></div><div id="taskBoardFull" class="kanban wide"></div></div></section>
+    <section id="risks" class="page"><div class="panel"><div class="panel-head"><h3>Enterprise Risk Register</h3><button class="primary" data-open="riskModal">Add Risk</button></div><table id="riskTable"></table></div></section>
+    <section id="finance" class="page"><div class="panel"><div class="panel-head"><h3>Finance & Billing Control</h3><button class="primary" data-open="invoiceModal">Add Invoice</button></div><table id="invoiceTable"></table></div></section>
+    <section id="milestones" class="page"><div class="panel"><div class="panel-head"><h3>Milestone Roadmap</h3><button class="primary" data-open="milestoneModal">Add Milestone</button></div><table id="milestoneTable"></table></div></section>
+    <section id="analytics" class="page"><div class="grid two"><section class="panel"><h3>Project Status</h3><canvas id="statusChart" width="520" height="280"></canvas></section><section class="panel"><h3>Customer Health</h3><canvas id="healthChart" width="520" height="280"></canvas></section><section class="panel"><h3>Risk Severity</h3><canvas id="riskChart" width="520" height="280"></canvas></section><section class="panel"><h3>Invoice Pipeline</h3><canvas id="invoiceChart" width="520" height="280"></canvas></section></div></section>
+    <section id="audit" class="page"><div class="panel"><h3>Audit Timeline</h3><div id="auditList" class="timeline"></div></div></section>
+  </main>
+
+  <div id="modalHost"></div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
