@@ -44,18 +44,18 @@ It focuses on:
 
 
 app/
-├── core/ # Config, DB setup, response handling
+├── core/ # Configuration, database setup, response handling
 ├── routes/ # API endpoints
-├── services/ # Business logic
-├── templates/ # HTML UI
-├── static/ # CSS, JS assets
-└── main.py # Entry point
+├── services/ # Business logic layer
+├── templates/ # HTML UI files
+├── static/ # CSS, JavaScript assets
+└── main.py # Application entry point
 
 scripts/
-└── reset_database.py
+└── reset_database.py # Database reset utility
 
 tests/
-└── test_smoke.py
+└── test_smoke.py # Basic smoke tests
 
 
 ---
